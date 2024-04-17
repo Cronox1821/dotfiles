@@ -29,6 +29,10 @@ Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/sheerun/vim-polyglot' " Better syntax
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
+Plug 'https://github.com/nvim-telescope/telescope.nvim'
+Plug 'https://github.com/nvim-lua/plenary.nvim'
+Plug 'https://github.com/nvimdev/dashboard-nvim'
+
 
 call plug#end()
 
@@ -37,11 +41,20 @@ call plug#end()
 nnoremap <C-n> :NERDTree<CR>
 nnoremap <C-t> :NERDTreeToggle<CR>
 nnoremap <C-f> :NERDTreeFind<CR>
+let mapleader = ' '
+nnoremap <leader>pv :Ex<CR>
 nmap <F8> :TagbarToggle<CR>
+nnoremap <leader>pf <cmd>Telescope find_files<cr>
+nnoremap <leader>ps <cmd>Telescope live_grep<cr>
 
 let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
+" Run Code
+augroup compileandrun
+    autocmd!
+    autocmd filetype python nnoremap <f5> :w <bar> :!python3 % <cr>
+augroup END
 
 " Customization
 
@@ -56,7 +69,6 @@ let g:sonokai_style = 'andromeda'
 "let g:sonokai_better_performance = 1 
 
 let g:airline_theme = 'sonokai'
-
 
 :set completeopt-=preview " No Preview
 
