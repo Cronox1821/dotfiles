@@ -1,5 +1,5 @@
 :set number
-:set relativenumber
+":set relativenumber
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
@@ -30,9 +30,6 @@ Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/sheerun/vim-polyglot' " Better syntax
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
 Plug 'https://github.com/nvim-telescope/telescope.nvim'
-Plug 'https://github.com/nvim-lua/plenary.nvim'
-Plug 'https://github.com/nvimdev/dashboard-nvim'
-
 
 call plug#end()
 
