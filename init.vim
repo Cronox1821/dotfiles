@@ -1,5 +1,5 @@
 :set number
-":set relativenumber
+:set relativenumber
 :set autoindent
 :set tabstop=4
 :set shiftwidth=4
@@ -28,8 +28,9 @@ Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 Plug 'https://github.com/neoclide/coc.nvim'  " Auto Completion
 Plug 'https://github.com/sheerun/vim-polyglot' " Better syntax
-Plug 'https://github.com/nvim-treesitter/nvim-treesitter'
+Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
 Plug 'https://github.com/nvim-telescope/telescope.nvim'
+Plug 'nvim-lua/plenary.nvim'
 
 call plug#end()
 
@@ -62,7 +63,10 @@ if has('termguicolors')
         set termguicolors
 endif
 
+""""""""""""""""""""" Sonokai 
+
 " The configuration options should be placed before `colorscheme sonokai`.
+
 let g:sonokai_style = 'andromeda'
 
 "let g:sonokai_better_performance = 1 
