@@ -48,10 +48,12 @@ let g:NERDTreeDirArrowExpandable="+"
 let g:NERDTreeDirArrowCollapsible="~"
 
 " Run Code
-augroup compileandrun
-    autocmd!
-    autocmd filetype python nnoremap <f5> :w <bar> :!python3 % <cr>
-augroup END
+"augroup compileandrun
+"    autocmd!
+"    autocmd filetype python nnoremap <f5> :w <bar> :!python3 % <cr>
+"augroup END
+
+autocmd FileType python map <buffer> <F9> :w<CR>:exec '!python3' shellescape(@%, 1)<CR>
 
 " Customization
 
